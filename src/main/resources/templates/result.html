@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Короткая ссылка</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Короткая ссылка</h1>
+
+<a href="/generate">Укоротить другую ссылку</a>
+
+<table>
+    <tr>
+        <th>Original</th>
+        <th>ShortLink</th>
+        <th>Rank</th>
+        <th>Visits</th>
+    </tr>
+    <tr th:each="links : ${linkArrayList}">
+        <td th:text="${links.getOriginal()}"></td>
+        <td th:text="${links.getLink()}"></td>
+        <td th:text="${links.getRank()}"></td>
+        <td th:text="${links.getCountOfVisits()}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
